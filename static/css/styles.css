@@ -1,0 +1,14 @@
+.card-image img{
+	width:10vw;
+	height:20vw;
+	object-fit:cover;
+	
+
+}
+.card-content{
+	height: 15vw;
+}
+td img {
+	height: 5vw;
+	object-fit:cover;
+}

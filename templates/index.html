@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout/layout}">
+<head>
+<title>Negozio PC</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<!-- Page-specific content -->
+		<h1>La gang dei PC</h1>
+		<p>Dal 1880 i primi del settore informatico. Un'azienda in
+			continua evoluzione: dai piccioni viaggiatori ai più moderni PC da
+			gaming, siamo pronti a soddisfare ogni tua esigenza.</p>
+		<h3>Prodotti Disponibili</h3>
+		<div class="row">
+			<div th:each="pc : ${listapc}" class="card col s3">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" th:src="${pc.url}" alt="Immagine prodotto">
+				</div>
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4"
+						th:text="${pc.nome}"><i class="material-icons right">more_vert</i></span>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4"
+						th:text="${pc.marca}"><i class="material-icons right">close</i></span>
+					<p th:text="${pc.prezzo}"></p>
+					<p th:text="${pc.descrizione}"></p>
+					<div class="card-action">
+						<form action="/process" method="POST">
+							<input type="hidden" name="nome" th:value="${pc.nome}"> <input
+								type="number" name="num" value="0"> <input type="submit"
+								value="Inserisci nel carrello">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout/layout}">
+<head>
+<title>Il tuo Carrello</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="container">
+			<table>
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Marca</th>
+						<th>Prezzo</th>
+						<th>Immagine</th>
+						<th>Quantità</th>
+						<th>Modifica</th>
+						<th>Rimuovi</th>
+					</tr>
+				</thead>
+
+				<tbody>
+
+					<tr th:each="item:${lista}">
+						<td th:text="${item.nome}"></td>
+						<td th:text="${item.marca}"></td>
+						<td th:text="${item.prezzo}"></td>
+						<td><img th:src="${item.url}"></td>
+						<td th:text="${item.qnt}"></td>
+						<td>
+							<form action="/modifica" method="POST">
+								<input type="hidden" name="nome" th:value=${item.nome}>
+								<input type="number" placeholder="nuova quantità" name="num"
+									min=1 max="${item.qnt}" value="0"> <input type="submit"
+									value="Modifica">
+							</form>
+						</td>
+						<td>
+							<form action="/rimuovi" method="POST">
+								<input type="hidden" name="nome" th:value=${item.nome}>
+								<input type="submit" value="Rimuovi">
+							</form>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr>
+			<div class="riepilogo">
+				<h3>
+					Totale: <span th:text="${somma}"></span> €
+				</h3>
+				<form action="/compra" method="POST">
+					<a class="btn-floating btn-large red lighten-2 pulse"> <i
+						class="material-icons">shopping_cart</i></a>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
