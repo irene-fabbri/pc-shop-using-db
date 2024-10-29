@@ -1,43 +1,79 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout/layout}">
+	xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Negozio PC</title>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon"
+	href="https://cdn-icons-png.flaticon.com/256/17351/17351425.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- My CSS -->
+<link rel="stylesheet" th:href="@{/css/styles.css}">
+<!-- Materialize -->
+<link
+	th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}"
+	rel="stylesheet">
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	th:href="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css}">
+<!-- Compiled and minified JavaScript -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- Initialize sidenav -->
+<script>
+	// sidebar
+	document.addEventListener('DOMContentLoaded', function() {
+		var elems = document.querySelectorAll('.sidenav');
+		var instances = M.Sidenav.init(elems);
+	});
+</script>
+<script>
+	window.onload = gestoreLoad;
+
+	function gestoreLoad() {
+		// la funzione location reload ci permette di avere un refresh automatico della pagina
+		// anche quando l'utente utilizza le frecce del browser
+		window.addEventListener('pageshow', function(event) {
+			if (event.persisted) {
+				location.reload();
+			}
+		});
+	}
+</script>
 </head>
 <body>
-	<div layout:fragment="content">
-		<!-- Page-specific content -->
-		<h1>La gang dei PC</h1>
-		<p>Dal 1880 i primi del settore informatico. Un'azienda in
-			continua evoluzione: dai piccioni viaggiatori ai più moderni PC da
-			gaming, siamo pronti a soddisfare ogni tua esigenza.</p>
-		<h3>Prodotti Disponibili</h3>
-		<div class="row">
-			<div th:each="pc : ${listapc}" class="card col s3">
-				<div class="card-image waves-effect waves-block waves-light">
-					<img class="activator" th:src="${pc.url}" alt="Immagine prodotto">
-				</div>
-				<div class="card-content">
-					<span class="card-title activator grey-text text-darken-4"
-						th:text="${pc.nome}"><i class="material-icons right">more_vert</i></span>
-				</div>
-				<div class="card-reveal">
-					<span class="card-title grey-text text-darken-4"
-						th:text="${pc.marca}"><i class="material-icons right">close</i></span>
-					<p th:text="${pc.prezzo}"></p>
-					<p th:text="${pc.descrizione}"></p>
-					<div class="card-action">
-						<form action="/process" method="POST">
-							<input type="hidden" name="nome" th:value="${pc.nome}"> <input
-								type="number" name="num" value="0"> <input type="submit"
-								value="Inserisci nel carrello">
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	</div>
+	<header>
+		<!-- Common header content -->
 
+		<nav class="nav">
+			<div class="nav-wrapper">
+				<a th:href="@{/}">Home</a> <a th:href="@{/}"
+					data-target="mobile-demo" class="sidenav-trigger"><i
+					class="material-icons">menu</i></a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a class="nav-link" th:href="@{/contact}">Contattaci</a></li>
+					<li><a class="nav-link" th:href="@{/blog}">Blog</a></li>
+					<li><a class="nav-link" th:href="@{/carrello}">Visualizza
+							Carrello <!--<span class="cart-badge" th:text="${#lists.size(lista)}">0</span> -->
+					</a></li>
+					<li><a class="nav-link"></a></li>
+				</ul>
+			</div>
+		</nav>
+		<ul class="sidenav" id="mobile-demo">
+			<li><a th:href="@{/contact}">Contact</a></li>
+			<li><a th:href="@{/blog}">Blog</a></li>
+			<li><a class="nav-link" th:href="@{/carrello}">Visualizza
+					Carrello</a></li>
+		</ul>
+	</header>
+	<main layout:fragment="content">
+		<!-- Page-specific content will be inserted here -->
+	</main>
+	<footer>
+		<!-- Common footer content -->
+		<div></div>
+		Creato dalla gang.
+	</footer>
 </body>
 </html>
