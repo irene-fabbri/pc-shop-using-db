@@ -71,15 +71,15 @@ feel free to reach out and give me suggestions.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Contributors:
-
-<a href="https://github.com/FrancescoColli"><img src="https://avatars.githubusercontent.com/u/183523732?v=4" alt="Francesco Colli image" style="width: 5vw; height: 5vw; border-radius: 50%; background-color: #ccc;" /></a>
-
-<a href="https://github.com/ebofra95"><img src="https://avatars.githubusercontent.com/u/183523320?v=4" alt="Francesco Eboli image" style="width: 5vw; height: 5vw; border-radius: 50%; background-color: #ccc;" /></a>
-
-<a href="https://github.com/ebofra95"><img src="https://avatars.githubusercontent.com/u/183523320?v=4" alt="Pasquale Gerbi image" style="width: 5vw; height: 5vw; border-radius: 50%; background-color: #ccc;" /></a>
-
-<a href="https://github.com/federic553"><img src="https://avatars.githubusercontent.com/u/183523995?v=4" alt="Federico Manni image" style="width: 5vw; height: 5vw; border-radius: 50%; background-color: #ccc;" /></a>
-
+<div style="display: flex;">
+  <a href="https://github.com/FrancescoColli"><img src="https://avatars.githubusercontent.com/u/183523732?v=4" alt="Francesco Colli image" style="width: 5vw; height: 5vw; border-radius: 50%; background-color: #ccc;" /></a>
+  
+  <a href="https://github.com/ebofra95"><img src="https://avatars.githubusercontent.com/u/183523320?v=4" alt="Francesco Eboli image" style="width: 5vw; height: 5vw; border-radius: 50%; background-color: #ccc;" /></a>
+  
+  <a href="https://github.com/ebofra95"><img src="https://avatars.githubusercontent.com/u/183523320?v=4" alt="Pasquale Gerbi image" style="width: 5vw; height: 5vw; border-radius: 50%; background-color: #ccc;" /></a>
+  
+  <a href="https://github.com/federic553"><img src="https://avatars.githubusercontent.com/u/183523995?v=4" alt="Federico Manni image" style="width: 5vw; height: 5vw; border-radius: 50%; background-color: #ccc;" /></a>
+</div>
 <!-- CONTACT -->
 ## Contact
 
