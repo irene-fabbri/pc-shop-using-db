@@ -71,8 +71,8 @@ feel free to reach out and give me suggestions.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Contributors:
-[![Francesco Colli](https://avatars.githubusercontent.com/u/183523732?v=4&s=20)](https://github.com/FrancescoColli)
-[![Francesco Eboli](https://avatars.githubusercontent.com/u/183523320?v=4&s=20)](https://github.com/ebofra95)
+[![Francesco Colli](https://avatars.githubusercontent.com/u/183523732?v=4&s=5)](https://github.com/FrancescoColli)
+[![Francesco Eboli](https://avatars.githubusercontent.com/u/183523320?v=4&s=5)](https://github.com/ebofra95)
 <div style="display: flex;">
   <a href="https://github.com/FrancescoColli"><img src="https://avatars.githubusercontent.com/u/183523732?v=4" alt="Francesco Colli image" style="width: 5vw; height: 5vw; border-radius: 50%; background-color: #ccc;" /></a>
   
