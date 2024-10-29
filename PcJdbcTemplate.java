@@ -78,7 +78,7 @@ public class PcJdbcTemplate {
 	}
 
 	public int updateQnt(int num, String nome) {
-		String query = "UPDATE pc_shop SET (qntMagazzino, qntVenduta) = (qntMagazzino - ?, qntVenduta + ?) WHERE nome = ?";
+		String query = "UPDATE pc_shop SET qntMagazzino = qntMagazzino - ?, qntVenduta = qntVenduta + ? WHERE nome = ?";
 		return jdbcTemplateObject.update(query, num, num, nome);
 	}
 
