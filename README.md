@@ -34,7 +34,12 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li><a href="#detailed-description">Detailed description</a></li>
+    <li><a href="#code-description">Code description</a>
+      <ul>
+          <li><a href="#java">Java</a></li>
+          <li><a href="#html">Html</a></li>
+      </ul>
+    </li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -62,14 +67,11 @@ After a successful purchase, users will receive a confirmation email. The projec
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Detailed description
+## Code description
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+# Java
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+# Html
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
