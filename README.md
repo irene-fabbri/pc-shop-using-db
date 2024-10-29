@@ -69,9 +69,14 @@ After a successful purchase, users will receive a confirmation email. The projec
 
 ## Code description
 
-# Java
-
-# Html
+### Java
+  - [Database Config](DatabaseConfig.java) - _configures the connection to the MySql database_
+  - [Mail Config](MailConfig.java) - _configures the connection to gmail_
+  - [Email Service](EmailService.java) - _provides some useful mail templates_
+  - [Pc](Pc.java) - _is the personal computer in store class: it has model name, brand,description, price, image, quantity available in store and quantity sold. reflects the columns of the database table_
+  - [PcSelezionato](PcSelezionato.java) - _is the personal computer in shopping cart class: it has model name, brand,description, price, image, quantity selected for purchase_
+  - [PcJdbcTemplate](PcJdbcTemplate.java) - _is the class containing the database queries: select, insert, delete and update quantity (to update the available number and sold number of a given pc)_
+### Html
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
