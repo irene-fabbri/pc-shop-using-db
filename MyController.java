@@ -3,15 +3,20 @@ package com.example.demo;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import jakarta.mail.MessagingException;
+
 @Controller
 public class MyController {
 
+	@Autowired
+	EmailService emS;
 	/*
 	 * Creiamo un oggetto di tipo dipJdbcTemplate
 	 */
@@ -30,7 +35,6 @@ public class MyController {
 
 	@GetMapping("/")
 	public String getIndex(Model m1) {
-
 		m1.addAttribute("listapc", listapc);
 		return "index";
 	}
@@ -90,69 +94,35 @@ public class MyController {
 		return ("carrello");
 	}
 	
-	/*
-	 * @PostMapping("/process") public String getCarrello(@RequestParam("nome")
-	 * ArrayList<String> nomi,
-	 * 
-	 * @RequestParam("num") ArrayList<Integer> numeri,Model m1) {
-	 * 
-	 * //listapcselezionati.removeAll(listapcselezionati); for (int i = 0; i <
-	 * nomi.size(); i++) {
-	 * 
-	 * String str = "Hai selezionato: "; String str1 = "Al costo di: ";
-	 * 
-	 * if (numeri.get(i) != 0) {
-	 * 
-	 * str += nomi.get(i) + " " + numeri.get(i) + " volte\n"; somma += numeri.get(i)
-	 * * listapc.get(i).getPrezzo(); str1 += somma + "€"; for(int j = 0;
-	 * j<listapc.size(); j++) { if
-	 * (listapc.get(j).nome.equalsIgnoreCase(nomi.get(i))) { // if
-	 * (listapcselezionati.get(j).nome.equalsIgnoreCase(nomi.get(i))) { //
-	 * listapcselezionati.get(j).qnt +=numeri.get(i); // }
-	 * listapcselezionati.add(new Carrello(listapc.get(j).nome,
-	 * listapc.get(j).marca, listapc.get(j).descrizione, listapc.get(j).prezzo,
-	 * listapc.get(j).url,numeri.get(i))); } }
-	 * 
-	 * }
-	 * 
-	 * } System.out.println("La somma degli prezzi è: " + somma + " euro");
-	 * 
-	 * m1.addAttribute("somma", somma); m1.addAttribute("lista",
-	 * listapcselezionati); return ("carrello");
-	 * 
-	 * }
-	 * 
-	 * @GetMapping("/carrello") public String printCarrello(Model m1){
-	 * m1.addAttribute("somma", somma); m1.addAttribute("lista",
-	 * listapcselezionati); return ("carrello"); }
-	 * 
-	 * @PostMapping("/rimuovi") public String rimuovi(@RequestParam("nome") String
-	 * nome, @RequestParam("num") int numeri) { System.err.println("PRIMA"); for(Pc
-	 * pc:listapcselezionati) { System.err.println(pc.toString()); } for(int j = 0;
-	 * j<listapc.size(); j++) { if
-	 * (listapcselezionati.get(j).nome.equalsIgnoreCase(nome)) { somma -=
-	 * listapcselezionati.get(j).prezzo *numeri; listapcselezionati.get(j).qnt -=
-	 * numeri; } } System.err.println("DOPO"); for(Pc pc:listapcselezionati) {
-	 * System.err.println(pc.toString()); }
-	 * 
-	 * return "carrello"; }
-	 */
-
-	// *********************************************************************
-	// PROF
-	/*
-	 * Il metodo submit riceve i dati dal form
-	 * 
-	 * @PostMapping("/submit") public String getDip(@RequestParam("nome") String
-	 * nome,
-	 * 
-	 * @RequestParam("mansione") String mansione,
-	 * 
-	 * @RequestParam("stipendio") String stipendio) { // chiamiamo il metodo
-	 * insertDip su d1 e li passiamo i dati ottenuti dal form int stipendioD =
-	 * Integer.parseInt(stipendio); d1.insertDip(nome, mansione, stipendioD);
-	 * 
-	 * 
-	 * return "form"; }
-	 */
+	@PostMapping("/compra")
+	public String fattura(Model m1){
+		double somma = 0;
+		
+		int rowsAffected = 0;
+		for (PcSelezionato pc : pcSelezionati) {
+			somma += pc.getPrezzo() * pc.getQnt();
+			rowsAffected += db.updateQnt(pc.getQnt(), pc.getNome());
+		}
+		System.err.println("Numero di righe aggiornate :"+rowsAffected);
+		m1.addAttribute("somma", somma);
+		m1.addAttribute("lista", pcSelezionati);
+		return ("fattura");	
+	}
+	
+	@GetMapping("/email")
+	public String fatturaEmail(@RequestParam("mail") String mail,Model m1) throws MessagingException{
+		double somma = 0;
+		
+		StringBuilder message = new StringBuilder("<h1>Riepilogo acquisti:</h1>"
+				+ "<table><thead><tr><th>Nome</th><th>Marca</th><th>Prezzo</th><th>Quantità</th><th>Immagine</th></tr><tbody>");
+		for (PcSelezionato pc : pcSelezionati) {
+			somma += pc.getPrezzo() * pc.getQnt();
+			message.append("<tr><td>").append(pc.getNome()).append("</td><td>").append(pc.getMarca()).append("</td><td>").append(pc.getPrezzo()).append(" €</td>"
+					+ "<td>").append(pc.getQnt()).append("</td><td><img src='").append(pc.getUrl()).append("'style='width: 5vw; height: auto; margin: 10px;'/></td></tr>");
+		}
+		message.append("</tbody></table><h3>Totale: ").append(somma).append(" € </h3><footer>Grazie per aver acquistato da La Gang dei PC</footer>");
+		emS.sendEmail(mail ,"Grazie di aver acquistato da noi",message.toString());
+		System.out.println("Acquisto avvenuto con successo");
+		return "redirect:/";
+	}
 }
