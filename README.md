@@ -71,9 +71,26 @@ feel free to reach out and give me suggestions.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Contributors:
+* [Carlo Inserra](https://github.com/Carleoinserra)
+* [Francesco Colli](https://github.com/FrancescoColli)
+* [Francesco Eboli](https://github.com/ebofra95)
+* [Pasquale Gerbi]()
+* [Federico Manni](https://github.com/federic553)
 
-<a href="https://github.com/github_username/repo_name/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=github_username/repo_name" alt="contrib.rocks image" />
+<a href="https://github.com/FrancescoColli">
+  <img src="https://avatars.githubusercontent.com/u/183523732?v=4" alt="Francesco Colli image" style="width: 5vw; height: 5vw; border-radius: 50%; background-color: #ccc;" />
+</a>
+
+<a href="https://github.com/ebofra95">
+  <img src="https://avatars.githubusercontent.com/u/183523320?v=4" alt="Francesco Eboli image" style="width: 5vw; height: 5vw; border-radius: 50%; background-color: #ccc;" />
+</a>
+
+<a href="https://github.com/ebofra95">
+  <img src="https://avatars.githubusercontent.com/u/183523320?v=4" alt="Pasquale Gerbi image" style="width: 5vw; height: 5vw; border-radius: 50%; background-color: #ccc;" />
+</a>
+
+<a href="https://github.com/federic553">
+  <img src="https://avatars.githubusercontent.com/u/183523995?v=4" alt="Federico Manni image" style="width: 5vw; height: 5vw; border-radius: 50%; background-color: #ccc;" />
 </a>
 
 
