@@ -48,7 +48,7 @@
 
 [![Pc Shop Screen Shot][product-screenshot]](https://example.com)
 
-My first attemot at crating a web application using Spring Boot and Thymeleaf with a MySQL backend. 
+My first attempt at crating a web application using Spring Boot and Thymeleaf with a MySQL backend. 
 The application will allow users to purchase PCs listed in the database, ensuring sufficient stock before completing the transaction. 
 After a successful purchase, users will receive a confirmation email. The project will emphasize form validation and responsive design.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
