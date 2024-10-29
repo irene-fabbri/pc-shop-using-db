@@ -7,7 +7,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/irene-fabbri/pc-shop-using-db">
-    <img src=""https://cdn-icons-png.flaticon.com/256/17351/17351425.png" alt="Logo" width="80" height="80">
+    <img src="https://cdn-icons-png.flaticon.com/256/17351/17351425.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Pc Shop</h3>
