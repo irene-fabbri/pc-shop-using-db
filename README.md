@@ -34,7 +34,7 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li>
+    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -62,6 +62,18 @@ After a successful purchase, users will receive a confirmation email. The projec
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- ROADMAP -->
+## Roadmap
+
+- [ ] Feature 1
+- [ ] Feature 2
+- [ ] Feature 3
+    - [ ] Nested Feature
+
+See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- CONTRIBUTING -->
 ## Contributing
 
@@ -71,16 +83,12 @@ feel free to reach out and give me suggestions.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Contributors:
-<p>
-    <a href="https://github.com/FrancescoColli"><img src="https://avatars.githubusercontent.com/u/183523732?v=4" alt="Francesco Colli image" style="width: 5vw; height: 5vw; border-radius: 50%; background-color: #ccc;" /></a>
-  
+
+  <a href="https://github.com/FrancescoColli"><img src="https://avatars.githubusercontent.com/u/183523732?v=4" alt="Francesco Colli image" style="width: 5vw; height: 5vw; border-radius: 50%; background-color: #ccc;" /></a>
   <a href="https://github.com/ebofra95"><img src="https://avatars.githubusercontent.com/u/183523320?v=4" alt="Francesco Eboli image" style="width: 5vw; height: 5vw; border-radius: 50%; background-color: #ccc;" /></a>
-  
   <a href="https://github.com/Pasquale1702"><img src="https://avatars.githubusercontent.com/u/183523433?v=4" alt="Pasquale Gerbi image" style="width: 5vw; height: 5vw; border-radius: 50%; background-color: #ccc;" /></a>
-  
   <a href="https://github.com/federic553"><img src="https://avatars.githubusercontent.com/u/183523995?v=4" alt="Federico Manni image" style="width: 5vw; height: 5vw; border-radius: 50%; background-color: #ccc;" /></a>
-  
-</p>
+
 <!-- CONTACT -->
 ## Contact
 
