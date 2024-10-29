@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout/layout}">
+<head>
+<meta charset="UTF-8">
+<title>Fattura</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="container">
+			<h1>Ecco cosa hai acquistato</h1>
+			<table>
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Marca</th>
+						<th>Prezzo</th>
+						<th>Immagine</th>
+						<th>Quantità</th>
+					</tr>
+				</thead>
+
+				<tbody>
+
+					<tr th:each="item:${lista}">
+						<td th:text="${item.nome}"></td>
+						<td th:text="${item.marca}"></td>
+						<td><span th:text="${item.prezzo}"></span> €</td>
+						<td><img th:src="${item.url}"></td>
+						<td th:text="${item.qnt}"></td>
+					</tr>
+				</tbody>
+			</table>
+			<hr>
+			<div class="riepilogo">
+				<h2>Acquisto Effettuato</h2>
+				<h3>
+					Per un totale di: <span th:text="${somma}"></span> €
+				</h3>
+				<form action="/email" method="GET">
+
+					<input type="text" placeholder="Indirizzo Email" name="mail">
+					<button class="btn-floating btn-large red lighten-2 pulse" type="submit" name="action">
+						<i class="material-icons">email</i>
+					</button>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
